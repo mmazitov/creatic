@@ -1,0 +1,16 @@
+-
+  var menuItems = [
+    { name: 'Categories', href: '/categories' },
+    { name: 'About', href: '/about' },
+    { name: 'Services', href: '/services' },
+    { name: 'Portfolio', href: '/portfolio' },
+    { name: 'Pages', href: '/pages' },
+    { name: 'Support', href: '/contact' }
+  ]
+
+.footer__nav
+  ul(class='footer__nav--list')
+    each item, index in menuItems
+      li(class=['footer__nav--item', index === 0 ? 'active' : ''])
+        a(href=item.href class='footer__nav--link')
+          | #{item.name}

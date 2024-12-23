@@ -1,0 +1,34 @@
+-
+	var statistics = [
+		{
+			imgSrc: "pic/statistic/statistic-img-01.png",
+			imgAlt: "Team members",
+			heading: "50+",
+			text: "Team members"
+		},
+		{
+			imgSrc: "pic/statistic/statistic-img-02.png",
+			imgAlt: "Project done",
+			heading: "200+",
+			text: "Project done"
+		},
+		{
+			imgSrc: "pic/statistic/statistic-img-03.png",
+			imgAlt: "Happy customers",
+			heading: "500+",
+			text: "Happy customers"
+		},
+		{
+			imgSrc: "pic/statistic/statistic-img-04.png",
+			imgAlt: "Award Winning ",
+			heading: "75+",
+			text: "Award Winning"
+		}
+	]
+	
+ul.statistics__list
+	each statistic in statistics
+		li.statistics__item
+			img(src=statistic.imgSrc, alt=statistic.imgAlt).statistics__item--image
+			strong.statistics__item--heading= statistic.heading
+			p.statistics__item--text= statistic.text

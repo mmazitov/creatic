@@ -1,0 +1,16 @@
+-
+  var socials = [
+    { name: 'Facebook', href: '#', icon: 'fa-brands fa-facebook' },
+    { name: 'Instagram', href: '#', icon: 'fa-brands fa-instagram' },
+    { name: 'Viber', href: '#', icon: 'fa-brands fa-viber' },
+    { name: 'LinkedIn', href: '#', icon: 'fa-brands fa-linkedin' },
+    { name: 'Pinterest', href: '#', icon: 'fa-brands fa-pinterest' },
+    { name: 'Twitter', href: '#', icon: 'fa-brands fa-twitter' }
+  ]
+
+.footer__menu
+  ul(class='footer__socials--list')
+    each social in socials
+      li.footer__socials--item
+        a(href=social.href, class='footer__socials--link', title=social.name)
+          i(class=social.icon)

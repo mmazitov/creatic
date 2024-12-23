@@ -1,0 +1,136 @@
+@import "./mixins";
+@import "./variables";
+
+.btn {
+  &.search,
+  &.hamburger {
+    align-items: center;
+    color: var(--color-primary);
+    height: 52px;
+    justify-content: center;
+    width: 89px;
+
+    @include transition(opacity);
+  }
+
+  &.search {
+    display: flex;
+  }
+
+  &.hamburger {
+    display: none;
+
+    @media (max-width: 1024px) {
+      display: flex;
+    }
+  }
+
+  &.link {
+    border: $border-width-sm solid var(--color-primary);
+    border-radius: $radius-md;
+    display: inline-block;
+    min-width: 175px;
+    padding: 7px 13px;
+    text-align: center;
+    text-transform: uppercase;
+
+    @include transition(background);
+    @include spacing($fs-17, 14.5);
+
+    &:hover {
+      background: var(--color-primary);
+      text-decoration: none;
+    }
+  }
+
+  &.form {
+    background: var(--color-primary);
+    border: $border-width-sm solid var(--color-primary);
+    border-radius: $radius-sm;
+    color: $color-111728;
+    font-size: rem($fs-17);
+    line-height: rem($leading-25_5);
+    padding: 10px 17px;
+    text-transform: uppercase;
+
+    @include transition((background, color));
+
+    &:hover {
+      background: transparent;
+      color: var(--color-text);
+    }
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 27px;
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+
+    &.btn__group {
+      align-items: center;
+
+      .btn {
+        gap: 0;
+      }
+    }
+  }
+
+  &__group--label {
+    font-size: rem($fs-17);
+    line-height: rem($leading-25_5);
+  }
+
+  &__group--control {
+    background: transparent;
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+    font-size: rem($fs-17);
+    line-height: rem($leading-25_5);
+    padding: 10px 17px;
+
+    &.error {
+      border-color: var(--color-error);
+    }
+  }
+}
+
+textarea {
+  height: $height-178;
+}
+
+.search__form {
+  bottom: -40px;
+  opacity: 0;
+  position: absolute;
+  right: 15px;
+  visibility: hidden;
+
+  @include transition((opacity, visibility));
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .form__group {
+    position: relative;
+  }
+
+  .form__group--control {
+    background: var(--color-body);
+  }
+
+  .btn {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: $width-25;
+  }
+}

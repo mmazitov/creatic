@@ -1,0 +1,13 @@
+.contacts__form
+	form.form.contacts(action="#")
+		.form__group
+			label.form__group--label(for='my-input') YOUR NAME
+			input.form__group--control.name(type='text')
+		.form__group
+			label.form__group--label(for='my-input') YOUR EMAIL
+			input.form__group--control.email(type='text')
+		.form__group
+			label.form__group--label(for='my-input') YOUR MESSAGE
+			textarea.form__group--control.message(rows='5')
+		.form__group.btn__group
+			button.btn.form(type='submit') SEND MESSAGE

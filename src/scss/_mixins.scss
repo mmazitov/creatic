@@ -1,0 +1,32 @@
+@mixin transition(
+	$properties: all,
+	$duration: 0.5s,
+	$timing-function: ease-in-out,
+	$delay: 0s
+) {
+	$transitions: ();
+
+	@if type-of($properties) == "list" {
+		@each $property in $properties {
+			$transitions: append(
+				$transitions,
+				$property $duration $timing-function $delay,
+				comma
+			);
+		}
+	} @else {
+		$transitions: $properties $duration $timing-function $delay;
+	}
+
+	transition: $transitions;
+}
+
+@mixin responsive-font($font-size-px, $line-height-px, $base-context: 16px) {
+	font-size: #{$font-size-px / $base-context}rem;
+	line-height: #{$line-height-px / $font-size-px};
+}
+
+@mixin spacing($font-size, $percentage) {
+	$spacing: ($font-size * $percentage) / 100;
+	letter-spacing: $spacing;
+}

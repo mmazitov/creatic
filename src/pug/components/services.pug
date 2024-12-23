@@ -1,0 +1,35 @@
+-
+  var services = [
+    {
+      imgSrc: "pic/services/services-img-01.png",
+      imgAlt: "Video Marketing",
+      heading: "VIDEO MARKETING",
+      text: "Lorem ipsum Neque do porro quisquam est qui do quam"
+    },
+    {
+      imgSrc: "pic/services/services-img-02.png",
+      imgAlt: "Graphic Design",
+      heading: "Graphic Design",
+      text: "Lorem ipsum Neque do porro quisquam est qui do quam"
+    },
+    {
+      imgSrc: "pic/services/services-img-03.png",
+      imgAlt: "ui/ux Design",
+      heading: "ui/ux Design",
+      text: "Lorem ipsum Neque do porro quisquam est qui do quam"
+    },
+    {
+      imgSrc: "pic/services/services-img-04.png",
+      imgAlt: "WEBSITE DESIGN",
+      heading: "WEBSITE DESIGN",
+      text: "Lorem ipsum Neque do porro quisquam est qui do quam"
+    }
+  ]
+	
+ul.services__list
+  each service in services
+    li.services__item
+      a(href="#", title=service.imgAlt).services__item--link
+        img(src=service.imgSrc, alt=service.imgAlt).services__item--image
+        h3.services__item--heading= service.heading
+        p.services__item--text= service.text

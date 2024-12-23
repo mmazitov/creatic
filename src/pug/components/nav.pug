@@ -1,0 +1,18 @@
+-
+  var menuItems = [
+    { name: 'Home', href: '#' },
+    { name: 'About us', href: '#' },
+    { name: 'Services', href: '#' },
+    { name: 'Portfolio', href: '#' },
+    { name: 'Pages', href: '#' },
+    { name: 'Contact Us', href: '#' }
+  ]
+
+.header__menu
+  button(type='button', class='btn hamburger')
+    i(class="fa-solid fa-bars")
+  ul(class='header__nav--list')
+    each item, index in menuItems
+      li(class=['header__nav--item', index === 0 ? 'active' : ''])
+        a(href=item.href class='header__nav--link')
+          | #{item.name}
